@@ -36,6 +36,8 @@ return tab;
              entryPoint.appendChild(newTopic);
          });
 
+         
+
      })
      .catch((err) =>{
          console.log("the function did not")
