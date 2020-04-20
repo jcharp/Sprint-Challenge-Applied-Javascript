@@ -48,8 +48,8 @@ function createCard() {
     return card;
 }
 
-const entryPoint = document.querySelector('.topics')
 
+/*
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then((response) => {
         response.data.articles.forEach(element => {
@@ -57,3 +57,12 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         });
 
     })
+    */
+
+
+   function child () {
+    let topicLength = document.querySelectorAll('.tab')
+
+  
+    }
+    child()
