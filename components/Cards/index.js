@@ -27,7 +27,7 @@ function createCard() {
     const headline = document.createElement('div');
     const author = document.createElement('div');
     const imgContainer = document.createElement('div');
-    const image = document.createElement('img');
+    const img = document.createElement('img');
     const span1 = document.createElement('span');
 
     card.classList.add('card')
@@ -35,34 +35,45 @@ function createCard() {
     author.classList.add('author');
     imgContainer.classList.add('img-container');
 
-    const cardsContainer = document.querySelector(".cards-container");
 
-    cardsContainer.appendChild(card);
+    card.textContent = articless;
+    headline.textContent = headline;
+    author.textContent = authorName;
+    img.src = authorPhoto;
+    span1.textContent = authorName;
+
+
+
+    
+
     card.appendChild(headline);
     card.appendChild(author);
     author.appendChild(imgContainer);
-    imgContainer.appendChild(image);
+    imgContainer.appendChild(img);
     card.appendChild(span1);
 
-
+   
     return card;
 }
 
 
-/*
+const cardsContainer = document.querySelector(".cards-container");
+
+
+
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then((response) => {
-        response.data.articles.forEach(element => {
+      
+        response.data.articles.forEach( (element) => {
+        const newCard = createCard(element);
+
+            cardsContainer.appendChild(newCard);
             
         });
 
+      
     })
-    */
-
-
-   function child () {
-    let topicLength = document.querySelectorAll('.tab')
-
-  
-    }
-    child()
+    
+    .catch((error) => {
+        console.log('this did not work')
+    })
